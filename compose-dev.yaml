@@ -10,4 +10,3 @@ services:
       - ./frontend/src:/code/src
       - /project/node_modules
       - .:/app
-    command: ['npm', 'run', 'test']
