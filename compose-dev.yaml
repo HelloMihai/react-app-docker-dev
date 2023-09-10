@@ -2,10 +2,12 @@ services:
   fontend:
     image: docker/dev-environments-javascript:stable-1
     build:
-      context: frontend
-      target: development
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - 3000:3000
     volumes:
       - ./frontend/src:/code/src
       - /project/node_modules
+      - .:/app
+    command: ['npm', 'run', 'test']
